@@ -1,1 +1,1 @@
-{korisnicko_ime},{lozinka},{ime},{prezime},{jmbg},{datum_rodjenja},{broj_zdravstvene_knjizice}
+{korisnicko_ime},{lozinka},{ime},{prezime},{jmbg},{datum_rodjenja},{broj_zdravstvene_knjizice}novak,asd,Novak,Jankovic,2709999730015,27 09 1999,??

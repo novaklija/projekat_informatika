@@ -13,7 +13,7 @@ def prijava():
 
 def upisi_pacijenta(pacijent):
     f = open("pacijenti.txt", "a")
-    za_ispis = f"{pacijent["korisnicko_ime"]},{pacijent["lozinka"]},{pacijent["ime"]},{pacijent["prezime"]},{pacijent["jmbg"]},{pacijent["datum_rodjenja"]},{pacijent["broj_zdravstvene_knjizice"]}"
+    za_ispis = f'{pacijent["korisnicko_ime"]},{pacijent["lozinka"]},{pacijent["ime"]},{pacijent["prezime"]},{pacijent["jmbg"]},{pacijent["datum_rodjenja"]},{pacijent["broj_zdravstvene_knjizice"]}'
     f.write(za_ispis)
 
 
@@ -64,7 +64,7 @@ def procitaj_pacijente():
 def ispisi_pacijente():
     print("-"*50)
 
-    lista pacijenata = procitaj_pacijente()
+    lista_pacijenata = procitaj_pacijente()
 
     for pacijent in lista_pacijenata:
         za_ispis = "{:15}{:15}{:15}{:15}{:15}"\
@@ -85,7 +85,7 @@ def main():
   if opcija == 1:
         uloga = prijava()
         if uloga == "pacijent":
-            pacijent.meni_pacijenta()
+            Pacijent.meni_pacijenta(uloga)
         else:
             lekari.meni_lekari()
   elif opcija == 2:

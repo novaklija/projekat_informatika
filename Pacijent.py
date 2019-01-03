@@ -1,5 +1,5 @@
 
-def meni_pacijenta():
+def meni_pacijenta(uloga):
     if uloga == "pacijent":
         print ("1. Prikaz termina")
         print ("2. Prikaz izvestaja")
