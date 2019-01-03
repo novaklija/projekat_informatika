@@ -13,7 +13,7 @@ def prijava():
 
 def upisi_pacijenta(pacijent):
     f = open("pacijenti.txt", "a")
-    za_ispis = f"{pacijent['korisnicko_ime']},{pacijent['lozinka']},{pacijent['ime']},{pacijent['prezime']},{pacijent['jmbg']},{pacijent['datum_rodjenja']},{pacijent['broj_zdravstvene_knjizice']}"
+    za_ispis = f"{pacijent["korisnicko_ime"]},{pacijent["lozinka"]},{pacijent["ime"]},{pacijent["prezime"]},{pacijent["jmbg"]},{pacijent["datum_rodjenja"]},{pacijent["broj_zdravstvene_knjizice"]}"
     f.write(za_ispis)
 
 
@@ -38,9 +38,34 @@ def registracija():
 
  upisi_pacijenta(pacijent)
 
+def procitaj_pacijente():
+    f = open("pacijenti.txt", "r")
+
+    pacijenti = f.readlines()
+
+    lista_pacijenata = []
+
+    for pacijent in pacijenti:
+        podaci = pacijent.strip().split(" , ")
+        f.close()
+        pacijent = {}
+        pacijent["korisnicko_ime"] = podaci[0]
+        pacijent["lozinka"] = podaci[1]
+        pacijent["ime"] = podaci[2]
+        pacijent["prezime"] = podaci[3]
+        pacijent["jmbg"] = podaci[4]
+        pacijent["datum_rodjenja"] = podaci[5]
+        pacijent["broj_zdravstvene_knjizice"] = podaci[6]
+
+        lista_pacijenata.append(pacijent)
+        return lista_pacijenata
+
 
 def ispisi_pacijente():
     print("-"*50)
+
+    lista pacijenata = procitaj_pacijente()
+
     for pacijent in lista_pacijenata:
         za_ispis = "{:15}{:15}{:15}{:15}{:15}"\
         .format(pacijent["ime"],
