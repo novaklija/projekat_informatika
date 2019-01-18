@@ -78,18 +78,17 @@ def ispisi_pacijente():
 
 
 def main():
-  print ("1. Prijava")
-  print ("2. Registracija")
+    print ("Opcije su lekar ili pacijent")
 
-  opcija = int(input("Unesite opciju: "))
-  if opcija == 1:
+    opcija = input("Unesite opciju: ")
+    if opcija == 'lekar':
         uloga = prijava()
         if uloga == "pacijent":
             Pacijent.meni_pacijenta(uloga)
         else:
             lekari.meni_lekari()
-  elif opcija == 2:
-      registracija()
-      ispisi_pacijente()
+    elif opcija == 'pacijent':
+        registracija()
+        ispisi_pacijente()
 
 main()
